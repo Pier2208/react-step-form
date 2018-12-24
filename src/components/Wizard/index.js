@@ -31,7 +31,7 @@ class Wizard extends Component {
     }
 
     //handle fields chane
-    handleChange = (input, event) => {
+    handleChange = input => event => {
         this.setState({
             [input]: event.target.value
         })
