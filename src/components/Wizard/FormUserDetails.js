@@ -12,31 +12,34 @@ const FormUserDetails = ({ nextStep, handleChange, values }) => {
             width: '600px',
             margin: '0 auto'
         }}>
-            <h1 style={{ color: 'darkblue' }}>Enter your personal details</h1>
+            <h1 style={{ color: 'darkblue' }}>Step 1: General Details</h1>
             <form
                 style={{ display: 'flex', flexFlow: 'column', width: '400px' }}
                 noValidate>
                 <TextField
                     id="firstName"
+                    name="firstName"
                     label="Firstname"
                     value={values.firstName}
-                    onChange={handleChange('firstName')}
+                    onChange={handleChange}
                     margin='normal'
                 />
 
                 <TextField
                     id="lastName"
+                    name="lastName"
                     label="Lastname"
                     value={values.lastName}
-                    onChange={handleChange('lastName')}
+                    onChange={handleChange}
                     margin='normal'
                 />
 
                 <TextField
                     id="email"
+                    name="email"
                     label="Email"
                     value={values.email}
-                    onChange={handleChange('email')}
+                    onChange={handleChange}
                     margin='normal'
                 />
             </form>

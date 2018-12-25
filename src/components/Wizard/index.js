@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 
 //components
 import FormUserDetails from './FormUserDetails'
+import FormPersonalDetails from './FormPersonalDetails'
+import Confirm from './Confirm'
+import Success from './Success'
 
 
 class Wizard extends Component {
@@ -31,9 +34,9 @@ class Wizard extends Component {
     }
 
     //handle fields chane
-    handleChange = input => event => {
+    handleChange = e => {
         this.setState({
-            [input]: event.target.value
+            [e.target.name]: e.target.value
         })
     }
 
@@ -59,23 +62,26 @@ class Wizard extends Component {
                 )
             case 2:
                 return (
-                    <h1>FormPersonalDetails</h1>
+                    <FormPersonalDetails
+                        prevStep={this.prevStep}
+                        nextStep={this.nextStep}
+                        handleChange={this.handleChange}
+                        values={values}
+                    />
                 )
             case 3:
                 return (
-                    <h1>Confirm</h1>
+                    <Confirm
+                        prevStep={this.prevStep}
+                        nextStep={this.nextStep}
+                        values={values} 
+                    />
                 )
-            case 3:
+            case 4:
                 return (
-                    <h1>Success</h1>
+                    <Success />
                 )
         }
-
-        return (
-            <div>
-
-            </div>
-        )
     }
 }
 
